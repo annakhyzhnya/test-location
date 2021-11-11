@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <!-- (1) Assign styles of modal window: add css link as below-->
+    <link rel="stylesheet" href="css/libs/custom/modal-temporary.css">
+    <style>
+        .page_container{
+                width:80%;
+                margin: 0 auto;
+        }
+        .tile_container{
+                width:100%;
+                margin: 0 auto;
+            }
+        .tiles {
+            padding:10px 0px 10px 0px;
+            margin:0 auto;
+            width:100%;
+        }
+        .tiles-wrapper{
+            width:810px;
+            margin: 0 auto;
+        }
+        .wrapper {
+            width:100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            margin:0 auto;
+            padding:0px 20px 20px 20px;
+        }
+        .grid_item {
+            margin:0 auto;
+            width:100%;
+            text-align:center;
+            padding:50px;
+            border-style:solid;
+            border-width:1.5px;
+            border-color:#e3e5e8;
+            box-shadow: 9px 10px 32px -8px rgba(166,164,161,1)
+        }
+        .report_title {
+            font: normal 26px Droid Serif, Georgia, Times New Roman, serif;
+            color: #37809F;
+            padding-bottom: 10px;
+        }
+        .expand-tiles-block{
+            display:none;
+            border: 1px solid #37809F;
+            border-radius:2px
+        }
+        .expand-tiles-block .modal-footer{
+            border-top-color: #F1F1F1;
+        }
+        .expand-block iframe{
+            vertical-align:top;
+        }
+        .expand-block{
+            margin-bottom: 10px;
+            position:relative;
+        }
+        .expand-block.active-expand{
+            box-shadow: 0 0 0 1px #37809F;
+        }
+        .expand-block.active-expand:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 100%;
+            border-top: 7px solid #37809F;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            width: 0;
+            height: 0;
+            left: 50%;
+            margin-left: -8px;
+        }
+        .tiles-wrapper.hasExpandedTile .expand-block:not(.active-expand){
+            -webkit-filter: blur(1px);
+            filter: blur(1px);
+        }
+        .empty-folder-custom-msg{
+            line-height:250px;
+            text-align:center;
+            font-size:22px;
+            color:#999;
+        }
+        .rpt_block{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* fraction*/
+            max-width:1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page_container">
+        <div class="tile_container">
+            <div class="tiles">
+                <div class="tiles-wrapper">
+                    <h1 id="greeting" style="text-align:center;padding-top:10px"></h1>
+                    <div style="display:inline-block; vertical-align: top;" class="expand-block" href="#myExpand1">
+                        <iframe style="width:193px; height:248px; border: 0px none; pointer-events:none;" frameBorder="0" src="/service/iframe/index/type/tile/element/1422/segment/10916/navigation_back/Y"></iframe>
+                    </div>
+                    <div style="display:inline-block; vertical-align: top;" class="expand-block" href="#myExpand2">
+                        <iframe style="width:193px; height:248px; border: 0px none; pointer-events:none;" frameBorder="0" src="/service/iframe/index/type/tile/element/1422/segment/10917/navigation_back/Y"></iframe>
+                    </div>
+                    <div style="display:inline-block; vertical-align: top;" class="expand-block" href="#myExpand3">
+                        <iframe style="width:193px; height:248px; border: 0px none; pointer-events:none;" frameBorder="0" src="/service/iframe/index/type/tile/element/1422/segment/10915/navigation_back/Y"></iframe>
+                    </div>
+                    <div style="display:inline-block; vertical-align: top;" class="expand-block" href="#myExpand4">
+                        <iframe style="width:193px; height:248px; border: 0px none; pointer-events:none;" frameBorder="0" src="/service/iframe/index/type/tile/element/1422/segment/10918/navigation_back/Y"></iframe>
+                    </div>
+                    <div class="wrapper-for-expand-tile">
+                        <div id="myExpand1" class="expand-tiles-block">
+                            <div style="height:250px">
+                                <iframe class="expanded-tiles-frame" style="border:none;width:100%;height:100%; display:block;" src="/service/iframe/index/type/tile/folder/59/navigation_back/Y"></iframe>
+                            </div>
+                            <div class="modal-footer fs-14">
+                                <div class="btn_holder">
+                                    <button class="btn hide-btn">Hide</button><span>or</span><a class="cancel_link" href="/chart/index/index/element/1422/segment/10916/">open in separate page</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="myExpand2" class="expand-tiles-block">
+                            <div style="height:250px">
+                                <iframe class="expanded-tiles-frame" style="border:none;width:100%;height:100%; display:block;" src="/service/iframe/index/type/tile/folder/58/navigation_back/Y"></iframe>
+                            </div>
+                            <div class="modal-footer fs-14">
+                                <div class="btn_holder">
+                                    <button class="btn hide-btn">Hide</button><span>or</span><a class="cancel_link" href="/chart/index/index/element/1422/segment/10917/">open in separate page</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="myExpand3" class="expand-tiles-block">
+                            <div style="height:250px">
+                                <iframe class="expanded-tiles-frame" style="border:none;width:100%;height:100%; display:block;" src="/service/iframe/index/type/tile/folder/57/navigation_back/Y"></iframe>
+                            </div>
+                            <div class="modal-footer fs-14">
+                                <div class="btn_holder">
+                                    <button class="btn hide-btn">Hide</button><span>or</span><a class="cancel_link" href="/chart/index/index/element/1422/segment/10915/">open in separate page</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="myExpand4" class="expand-tiles-block">
+                            <div style="height:250px">
+                                <iframe class="expanded-tiles-frame" style="border:none;width:100%;height:100%; display:block;" src="/service/iframe/index/type/tile/folder/60/navigation_back/Y"></iframe>
+                            </div>
+                            <div class="modal-footer fs-14">
+                                <div class="btn_holder">
+                                    <button class="btn hide-btn">Hide</button><span>or</span><a class="cancel_link" href="/chart/index/index/element/1422/segment/10918/">open in separate page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr>
+        </div>
+        </div>
+        <script>
+        $.ajax({"url":'/index/index/user-info/ajax/Y'})
+  .done(function(response){
+      $('#greeting').text('Welcome to Metric Insights, ' + response.first_name + ' ' + response.last_name + '!');
+ });
+        </script>
+</body>
+</html>
